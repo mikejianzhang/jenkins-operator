@@ -100,7 +100,6 @@ spec:
                       - name
                       type: object
                   required:
-                  - configurations
                   - secret
                   type: object
               type: object
@@ -130,7 +129,6 @@ spec:
                       - name
                       type: object
                   required:
-                  - configurations
                   - secret
                   type: object
               type: object
@@ -2358,8 +2356,6 @@ spec:
                     - name
                     type: object
                   type: array
-              required:
-              - disableCSRFProtection
               type: object
             notifications:
               description: Notifications defines list of a services which are used
