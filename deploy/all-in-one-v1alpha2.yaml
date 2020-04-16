@@ -126,7 +126,7 @@ spec:
       serviceAccountName: jenkins-operator
       containers:
         - name: jenkins-operator
-          image: mikejianzhang/jenkins-operator
+          image: mikejianzhang/jenkins-operator:latest
           command:
           - jenkins-operator
           args: []
