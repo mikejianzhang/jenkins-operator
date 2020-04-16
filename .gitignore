@@ -81,6 +81,9 @@ Session.vim
 tags
 
 ### VisualStudioCode ###
-.vscode/*
 .history
 # End of https://www.gitignore.io/api/go,vim,emacs,visualstudiocode
+
+path to a text file that exists
+
+__debug_bin

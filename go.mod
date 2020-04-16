@@ -3,7 +3,7 @@ module github.com/jenkinsci/kubernetes-operator
 go 1.13
 
 require (
-	github.com/bndr/gojenkins v0.0.0-20181125150310-de43c03cf849
+	github.com/bndr/gojenkins v1.0.1
 	github.com/docker/distribution v2.7.1+incompatible
 	github.com/elazarl/goproxy v0.0.0-20190711103511-473e67f1d7d2 // indirect
 	github.com/elazarl/goproxy/ext v0.0.0-20190711103511-473e67f1d7d2 // indirect

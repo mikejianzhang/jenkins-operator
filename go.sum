@@ -45,6 +45,8 @@ github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973 h1:xJ4a3vCFaGF/jqvzLM
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
 github.com/bndr/gojenkins v0.0.0-20181125150310-de43c03cf849 h1:nV1eKvUlIKhH4/atJIT9tpClzSRTs7TIHS/dRY1EQCw=
 github.com/bndr/gojenkins v0.0.0-20181125150310-de43c03cf849/go.mod h1:J2FxlujWW87NJJrdysyctcDllRVYUONGGlHX16134P4=
+github.com/bndr/gojenkins v1.0.1 h1:DFIuamRSmXoI/CwB44txuRf8xaHZNejZge/Lui4RYD4=
+github.com/bndr/gojenkins v1.0.1/go.mod h1:J2FxlujWW87NJJrdysyctcDllRVYUONGGlHX16134P4=
 github.com/boltdb/bolt v1.3.1/go.mod h1:clJnj/oiGkjum5o1McbSZDSLxVThjynRyGBgiAx27Ps=
 github.com/bradfitz/go-smtpd v0.0.0-20170404230938-deb6d6237625/go.mod h1:HYsPBTaaSFSlLx/70C2HPIMNZpVV8+vt/A+FMnYP11g=
 github.com/census-instrumentation/opencensus-proto v0.2.0 h1:LzQXZOgg4CQfE6bFvXGM30YZL1WW/M337pXml+GrcZ4=
