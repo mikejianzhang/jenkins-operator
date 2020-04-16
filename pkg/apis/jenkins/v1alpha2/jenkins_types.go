@@ -331,7 +331,7 @@ type JenkinsMaster struct {
 	Plugins []Plugin `json:"plugins,omitempty"`
 
 	// DisableCSRFProtection allows you to toggle CSRF Protection on Jenkins
-	DisableCSRFProtection bool `json:"disableCSRFProtection"`
+	DisableCSRFProtection bool `json:"disableCSRFProtection,omitempty"`
 }
 
 // Service defines Kubernetes service attributes
