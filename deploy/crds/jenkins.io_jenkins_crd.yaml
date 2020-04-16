@@ -78,59 +78,51 @@ spec:
               description: ConfigurationAsCode defines configuration of Jenkins customization
                 via Configuration as Code Jenkins plugin
               properties:
-                customization:
-                  description: Customization defines configuration of Jenkins customization
+                configurations:
+                  items:
+                    description: ConfigMapRef is reference to Kubernetes ConfigMap
+                    properties:
+                      name:
+                        type: string
+                    required:
+                    - name
+                    type: object
+                  type: array
+                secret:
+                  description: SecretRef is reference to Kubernetes secret
                   properties:
-                    configurations:
-                      items:
-                        description: ConfigMapRef is reference to Kubernetes ConfigMap
-                        properties:
-                          name:
-                            type: string
-                        required:
-                        - name
-                        type: object
-                      type: array
-                    secret:
-                      description: SecretRef is reference to Kubernetes secret
-                      properties:
-                        name:
-                          type: string
-                      required:
-                      - name
-                      type: object
+                    name:
+                      type: string
                   required:
-                  - secret
+                  - name
                   type: object
+              required:
+              - secret
               type: object
             groovyScripts:
               description: GroovyScripts defines configuration of Jenkins customization
                 via groovy scripts
               properties:
-                customization:
-                  description: Customization defines configuration of Jenkins customization
+                configurations:
+                  items:
+                    description: ConfigMapRef is reference to Kubernetes ConfigMap
+                    properties:
+                      name:
+                        type: string
+                    required:
+                    - name
+                    type: object
+                  type: array
+                secret:
+                  description: SecretRef is reference to Kubernetes secret
                   properties:
-                    configurations:
-                      items:
-                        description: ConfigMapRef is reference to Kubernetes ConfigMap
-                        properties:
-                          name:
-                            type: string
-                        required:
-                        - name
-                        type: object
-                      type: array
-                    secret:
-                      description: SecretRef is reference to Kubernetes secret
-                      properties:
-                        name:
-                          type: string
-                      required:
-                      - name
-                      type: object
+                    name:
+                      type: string
                   required:
-                  - secret
+                  - name
                   type: object
+              required:
+              - secret
               type: object
             master:
               description: Master represents Jenkins master pod properties and Jenkins

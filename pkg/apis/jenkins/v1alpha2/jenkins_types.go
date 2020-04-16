@@ -609,10 +609,10 @@ type Customization struct {
 
 // GroovyScripts defines configuration of Jenkins customization via groovy scripts
 type GroovyScripts struct {
-	Customization `json:"customization,omitempty"`
+	Customization `json:",inline"`
 }
 
 // ConfigurationAsCode defines configuration of Jenkins customization via Configuration as Code Jenkins plugin
 type ConfigurationAsCode struct {
-	Customization `json:"customization,omitempty"`
+	Customization `json:",inline"`
 }
