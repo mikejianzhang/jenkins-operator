@@ -33,7 +33,7 @@ spec:
           properties:
             backup:
               description: 'Backup defines configuration of Jenkins backup More info:
-                https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore'
+                https://github.com/mikejianzhang/jenkins-operator/blob/main/docs/getting-started.md#configure-backup-and-restore'
               properties:
                 action:
                   description: Action defines action which performs backup in backup
@@ -2358,6 +2358,8 @@ spec:
                     - name
                     type: object
                   type: array
+              required:
+              - disableCSRFProtection
               type: object
             notifications:
               description: Notifications defines list of a services which are used
@@ -2537,7 +2539,7 @@ spec:
               type: array
             restore:
               description: 'Backup defines configuration of Jenkins backup restore
-                More info: https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore'
+                More info: https://github.com/mikejianzhang/jenkins-operator/blob/main/docs/getting-started.md#configure-backup-and-restore'
               properties:
                 action:
                   description: Action defines action which performs restore backup
@@ -2575,10 +2577,10 @@ spec:
               type: object
             seedJobs:
               description: 'SeedJobs defines list of Jenkins Seed Job configurations
-                More info: https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines'
+                More info: https://github.com/mikejianzhang/jenkins-operator/blob/main/docs/getting-started.md#configure-seed-jobs-and-pipelines'
               items:
                 description: 'SeedJob defines configuration for seed job More info:
-                  https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines'
+                  https://github.com/mikejianzhang/jenkins-operator/blob/main/docs/getting-started.md#configure-seed-jobs-and-pipelines'
                 properties:
                   additionalClasspath:
                     description: AdditionalClasspath is setting for Job DSL API plugin
