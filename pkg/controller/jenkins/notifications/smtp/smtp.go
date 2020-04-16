@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/notifications/event"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/notifications/provider"
+	"github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/notifications/event"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/notifications/provider"
 
 	"github.com/pkg/errors"
 	"gopkg.in/gomail.v2"

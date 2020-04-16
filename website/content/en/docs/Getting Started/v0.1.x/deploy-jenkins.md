@@ -55,7 +55,7 @@ spec:
     targets: "cicd/jobs/*.jenkins"
     description: "Jenkins Operator repository"
     repositoryBranch: master
-    repositoryUrl: https://github.com/jenkinsci/kubernetes-operator.git
+    repositoryUrl: https://github.com/mikejianzhang/jenkins-operator.git
 ```
 
 Deploy a Jenkins to K8s:

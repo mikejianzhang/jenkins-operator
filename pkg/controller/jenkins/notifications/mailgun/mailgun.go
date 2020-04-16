@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/notifications/event"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/notifications/provider"
+	"github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/notifications/event"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/notifications/provider"
 
 	"github.com/mailgun/mailgun-go/v3"
 	"github.com/pkg/errors"

@@ -2,15 +2,16 @@ package e2e
 
 import (
 	goctx "context"
-	"golang.org/x/net/context"
 	"net/http"
 	"testing"
 	"time"
 
-	"github.com/jenkinsci/kubernetes-operator/internal/try"
-	"github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2"
-	jenkinsclient "github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/client"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/base/resources"
+	"golang.org/x/net/context"
+
+	"github.com/mikejianzhang/jenkins-operator/internal/try"
+	"github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2"
+	jenkinsclient "github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/client"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/base/resources"
 
 	"github.com/bndr/gojenkins"
 	framework "github.com/operator-framework/operator-sdk/pkg/test"

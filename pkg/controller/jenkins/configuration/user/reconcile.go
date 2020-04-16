@@ -3,13 +3,13 @@ package user
 import (
 	"strings"
 
-	jenkinsclient "github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/client"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/backuprestore"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/base/resources"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/user/casc"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/user/seedjobs"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/groovy"
+	jenkinsclient "github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/client"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/backuprestore"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/base/resources"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/user/casc"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/user/seedjobs"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/groovy"
 
 	"github.com/go-logr/logr"
 	"k8s.io/client-go/rest"

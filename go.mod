@@ -1,4 +1,4 @@
-module github.com/jenkinsci/kubernetes-operator
+module github.com/mikejianzhang/jenkins-operator
 
 go 1.13
 

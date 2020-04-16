@@ -72,7 +72,7 @@ spec:
     targets: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cicd/jobs/*.jenkins&amp;#34;&lt;/span&gt;
     description: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Jenkins Operator repository&amp;#34;&lt;/span&gt;
     repositoryBranch: master
-    repositoryUrl: https://github.com/jenkinsci/kubernetes-operator.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    repositoryUrl: https://github.com/mikejianzhang/jenkins-operator.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Deploy a Jenkins to Kubernetes:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create -f jenkins_instance.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Watch the Jenkins instance being created:&lt;/p&gt;
@@ -129,7 +129,7 @@ pipelineJob(&#39;build-jenkins-operator&#39;) {
             scm {
                 git {
                     remote {
-                        url(&#39;https://github.com/jenkinsci/kubernetes-operator.git&#39;)
+                        url(&#39;https://github.com/mikejianzhang/jenkins-operator.git&#39;)
                         credentials(&#39;jenkins-operator&#39;)
                     }
                     branches(&#39;*/master&#39;)
@@ -148,7 +148,7 @@ pipelineJob(&#39;build-jenkins-operator&#39;) {
 def label = &amp;quot;build-jenkins-operator-${UUID.randomUUID().toString()}&amp;quot;
 def home = &amp;quot;/home/jenkins&amp;quot;
 def workspace = &amp;quot;${home}/workspace/build-jenkins-operator&amp;quot;
-def workdir = &amp;quot;${workspace}/src/github.com/jenkinsci/kubernetes-operator/&amp;quot;
+def workdir = &amp;quot;${workspace}/src/github.com/mikejianzhang/jenkins-operator/&amp;quot;
 
 podTemplate(label: label,
         containers: [
@@ -207,7 +207,7 @@ spec:
     targets: &amp;quot;cicd/jobs/*.jenkins&amp;quot;
     description: &amp;quot;Jenkins Operator repository&amp;quot;
     repositoryBranch: master
-    repositoryUrl: https://github.com/jenkinsci/kubernetes-operator.git
+    repositoryUrl: https://github.com/mikejianzhang/jenkins-operator.git
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;Jenkins Operator&lt;/strong&gt; will automatically discover and configure all the seed jobs.&lt;/p&gt;
@@ -291,7 +291,7 @@ spec:
     targets: &amp;quot;cicd/jobs/*.jenkins&amp;quot;
     description: &amp;quot;Jenkins Operator repository&amp;quot;
     repositoryBranch: master
-    repositoryUrl: https://github.com/jenkinsci/kubernetes-operator.git
+    repositoryUrl: https://github.com/mikejianzhang/jenkins-operator.git
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;and create a Kubernetes Secret (name of secret should be the same from &lt;code&gt;credentialID&lt;/code&gt; field):&lt;/p&gt;
@@ -1019,7 +1019,7 @@ Resource Types:
 &lt;ul&gt;&lt;li&gt;
 &lt;a href=&#34;#github.com%2fjenkinsci%2fkubernetes-operator%2fpkg%2fapis%2fjenkins%2fv1alpha2.Jenkins&#34;&gt;Jenkins&lt;/a&gt;
 &lt;/li&gt;&lt;/ul&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Jenkins&#34;&gt;Jenkins
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Jenkins&#34;&gt;Jenkins
 &lt;/h3&gt;
 &lt;p&gt;
 &lt;p&gt;Jenkins is the Schema for the jenkins API&lt;/p&gt;
@@ -1067,7 +1067,7 @@ Refer to the Kubernetes API documentation for the fields of the
 &lt;td&gt;
 &lt;code&gt;spec&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsSpec&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsSpec&#34;&gt;
 JenkinsSpec
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1081,7 +1081,7 @@ JenkinsSpec
 &lt;td&gt;
 &lt;code&gt;master&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsMaster&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsMaster&#34;&gt;
 JenkinsMaster
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1095,23 +1095,23 @@ Every single change here requires a pod restart.&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;seedJobs&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SeedJob&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SeedJob
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SeedJob&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SeedJob
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
 &lt;td&gt;
 &lt;em&gt;(Optional)&lt;/em&gt;
 &lt;p&gt;SeedJobs defines list of Jenkins Seed Job configurations
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&lt;/a&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;
 &lt;code&gt;notifications&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Notification&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Notification
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Notification&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Notification
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -1124,7 +1124,7 @@ Can be used to integrate chat services like Slack, Microsoft Teams or Mailgun&lt
 &lt;td&gt;
 &lt;code&gt;service&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
 Service
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1141,7 +1141,7 @@ type: ClusterIP&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;slaveService&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
 Service
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1158,7 +1158,7 @@ type: ClusterIP&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;backup&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Backup&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Backup&#34;&gt;
 Backup
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1166,14 +1166,14 @@ Backup
 &lt;td&gt;
 &lt;em&gt;(Optional)&lt;/em&gt;
 &lt;p&gt;Backup defines configuration of Jenkins backup
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;
 &lt;code&gt;restore&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Restore&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Restore&#34;&gt;
 Restore
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1181,14 +1181,14 @@ Restore
 &lt;td&gt;
 &lt;em&gt;(Optional)&lt;/em&gt;
 &lt;p&gt;Backup defines configuration of Jenkins backup restore
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;
 &lt;code&gt;groovyScripts&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.GroovyScripts&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.GroovyScripts&#34;&gt;
 GroovyScripts
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1202,7 +1202,7 @@ GroovyScripts
 &lt;td&gt;
 &lt;code&gt;configurationAsCode&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.ConfigurationAsCode&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.ConfigurationAsCode&#34;&gt;
 ConfigurationAsCode
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1219,7 +1219,7 @@ ConfigurationAsCode
 &lt;td&gt;
 &lt;code&gt;status&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsStatus&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsStatus&#34;&gt;
 JenkinsStatus
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1230,7 +1230,7 @@ JenkinsStatus
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.AppliedGroovyScript&#34;&gt;AppliedGroovyScript
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.AppliedGroovyScript&#34;&gt;AppliedGroovyScript
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1293,7 +1293,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Backup&#34;&gt;Backup
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Backup&#34;&gt;Backup
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1325,7 +1325,7 @@ string
 &lt;td&gt;
 &lt;code&gt;action&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Handler&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Handler&#34;&gt;
 Handler
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1359,7 +1359,7 @@ bool
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.ConfigMapRef&#34;&gt;ConfigMapRef
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.ConfigMapRef&#34;&gt;ConfigMapRef
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1388,7 +1388,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.ConfigurationAsCode&#34;&gt;ConfigurationAsCode
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.ConfigurationAsCode&#34;&gt;ConfigurationAsCode
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1409,7 +1409,7 @@ string
 &lt;td&gt;
 &lt;code&gt;Customization&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Customization&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Customization&#34;&gt;
 Customization
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1419,7 +1419,7 @@ Customization
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Container&#34;&gt;Container
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Container&#34;&gt;Container
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1666,7 +1666,7 @@ More info: &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-contai
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Customization&#34;&gt;Customization
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Customization&#34;&gt;Customization
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1688,7 +1688,7 @@ More info: &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-contai
 &lt;td&gt;
 &lt;code&gt;secret&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretRef&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretRef&#34;&gt;
 SecretRef
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1700,8 +1700,8 @@ SecretRef
 &lt;td&gt;
 &lt;code&gt;configurations&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.ConfigMapRef&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.ConfigMapRef
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.ConfigMapRef&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.ConfigMapRef
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -1710,7 +1710,7 @@ SecretRef
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.GroovyScripts&#34;&gt;GroovyScripts
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.GroovyScripts&#34;&gt;GroovyScripts
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1731,7 +1731,7 @@ SecretRef
 &lt;td&gt;
 &lt;code&gt;Customization&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Customization&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Customization&#34;&gt;
 Customization
 &lt;/a&gt;
 &lt;/em&gt;
@@ -1741,7 +1741,7 @@ Customization
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Handler&#34;&gt;Handler
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Handler&#34;&gt;Handler
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1774,7 +1774,7 @@ Kubernetes core/v1.ExecAction
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsCredentialType&#34;&gt;JenkinsCredentialType
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsCredentialType&#34;&gt;JenkinsCredentialType
 (&lt;code&gt;string&lt;/code&gt; alias)&lt;/p&gt;&lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1783,7 +1783,7 @@ Kubernetes core/v1.ExecAction
 &lt;p&gt;
 &lt;p&gt;JenkinsCredentialType defines type of Jenkins credential used to seed job mechanism&lt;/p&gt;
 &lt;/p&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsMaster&#34;&gt;JenkinsMaster
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsMaster&#34;&gt;JenkinsMaster
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -1869,8 +1869,8 @@ fsGroup: 1000&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;containers&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Container&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Container
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Container&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Container
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -1961,8 +1961,8 @@ More info: &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/volumes&#
 &lt;td&gt;
 &lt;code&gt;basePlugins&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Plugin&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Plugin
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Plugin&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Plugin
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -1991,8 +1991,8 @@ version: 0.12.1&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;plugins&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Plugin&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Plugin
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Plugin&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Plugin
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2014,7 +2014,7 @@ bool
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsSpec&#34;&gt;JenkinsSpec
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsSpec&#34;&gt;JenkinsSpec
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2035,7 +2035,7 @@ bool
 &lt;td&gt;
 &lt;code&gt;master&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsMaster&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsMaster&#34;&gt;
 JenkinsMaster
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2049,23 +2049,23 @@ Every single change here requires a pod restart.&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;seedJobs&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SeedJob&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SeedJob
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SeedJob&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SeedJob
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
 &lt;td&gt;
 &lt;em&gt;(Optional)&lt;/em&gt;
 &lt;p&gt;SeedJobs defines list of Jenkins Seed Job configurations
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&lt;/a&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;
 &lt;code&gt;notifications&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Notification&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Notification
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Notification&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Notification
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2078,7 +2078,7 @@ Can be used to integrate chat services like Slack, Microsoft Teams or Mailgun&lt
 &lt;td&gt;
 &lt;code&gt;service&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
 Service
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2095,7 +2095,7 @@ type: ClusterIP&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;slaveService&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;
 Service
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2112,7 +2112,7 @@ type: ClusterIP&lt;/p&gt;
 &lt;td&gt;
 &lt;code&gt;backup&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Backup&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Backup&#34;&gt;
 Backup
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2120,14 +2120,14 @@ Backup
 &lt;td&gt;
 &lt;em&gt;(Optional)&lt;/em&gt;
 &lt;p&gt;Backup defines configuration of Jenkins backup
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;
 &lt;code&gt;restore&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Restore&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Restore&#34;&gt;
 Restore
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2135,14 +2135,14 @@ Restore
 &lt;td&gt;
 &lt;em&gt;(Optional)&lt;/em&gt;
 &lt;p&gt;Backup defines configuration of Jenkins backup restore
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-backup-and-restore&lt;/a&gt;&lt;/p&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;
 &lt;code&gt;groovyScripts&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.GroovyScripts&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.GroovyScripts&#34;&gt;
 GroovyScripts
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2156,7 +2156,7 @@ GroovyScripts
 &lt;td&gt;
 &lt;code&gt;configurationAsCode&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.ConfigurationAsCode&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.ConfigurationAsCode&#34;&gt;
 ConfigurationAsCode
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2168,7 +2168,7 @@ ConfigurationAsCode
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsStatus&#34;&gt;JenkinsStatus
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsStatus&#34;&gt;JenkinsStatus
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2315,8 +2315,8 @@ string
 &lt;td&gt;
 &lt;code&gt;appliedGroovyScripts&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.AppliedGroovyScript&#34;&gt;
-[][]github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.AppliedGroovyScript
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.AppliedGroovyScript&#34;&gt;
+[][]github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.AppliedGroovyScript
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2327,7 +2327,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Mailgun&#34;&gt;Mailgun
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Mailgun&#34;&gt;Mailgun
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2358,7 +2358,7 @@ string
 &lt;td&gt;
 &lt;code&gt;apiKeySecretKeySelector&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
 SecretKeySelector
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2388,7 +2388,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeams&#34;&gt;MicrosoftTeams
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeams&#34;&gt;MicrosoftTeams
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2409,7 +2409,7 @@ string
 &lt;td&gt;
 &lt;code&gt;webHookURLSecretKeySelector&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
 SecretKeySelector
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2420,7 +2420,7 @@ SecretKeySelector
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Notification&#34;&gt;Notification
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Notification&#34;&gt;Notification
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2441,7 +2441,7 @@ SecretKeySelector
 &lt;td&gt;
 &lt;code&gt;level&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.NotificationLevel&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.NotificationLevel&#34;&gt;
 NotificationLevel
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2473,8 +2473,8 @@ string
 &lt;td&gt;
 &lt;code&gt;slack&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Slack&#34;&gt;
-github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Slack
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Slack&#34;&gt;
+github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Slack
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2485,8 +2485,8 @@ github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Slack
 &lt;td&gt;
 &lt;code&gt;teams&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeams&#34;&gt;
-github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeams
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeams&#34;&gt;
+github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeams
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2497,8 +2497,8 @@ github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.MicrosoftTeam
 &lt;td&gt;
 &lt;code&gt;mailgun&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Mailgun&#34;&gt;
-github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Mailgun
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Mailgun&#34;&gt;
+github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Mailgun
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2509,8 +2509,8 @@ github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Mailgun
 &lt;td&gt;
 &lt;code&gt;smtp&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SMTP&#34;&gt;
-github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SMTP
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SMTP&#34;&gt;
+github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SMTP
 &lt;/a&gt;
 &lt;/em&gt;
 &lt;/td&gt;
@@ -2519,7 +2519,7 @@ github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SMTP
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.NotificationLevel&#34;&gt;NotificationLevel
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.NotificationLevel&#34;&gt;NotificationLevel
 (&lt;code&gt;string&lt;/code&gt; alias)&lt;/p&gt;&lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2528,7 +2528,7 @@ github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SMTP
 &lt;p&gt;
 &lt;p&gt;NotificationLevel defines the level of a Notification&lt;/p&gt;
 &lt;/p&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Plugin&#34;&gt;Plugin
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Plugin&#34;&gt;Plugin
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2569,7 +2569,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Restore&#34;&gt;Restore
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Restore&#34;&gt;Restore
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2601,7 +2601,7 @@ string
 &lt;td&gt;
 &lt;code&gt;action&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Handler&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Handler&#34;&gt;
 Handler
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2624,7 +2624,7 @@ uint64
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SMTP&#34;&gt;SMTP
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SMTP&#34;&gt;SMTP
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2645,7 +2645,7 @@ uint64
 &lt;td&gt;
 &lt;code&gt;usernameSecretKeySelector&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
 SecretKeySelector
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2657,7 +2657,7 @@ SecretKeySelector
 &lt;td&gt;
 &lt;code&gt;passwordSecretKeySelector&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
 SecretKeySelector
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2717,7 +2717,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;SecretKeySelector
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;SecretKeySelector
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2763,7 +2763,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretRef&#34;&gt;SecretRef
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretRef&#34;&gt;SecretRef
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2792,7 +2792,7 @@ string
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SeedJob&#34;&gt;SeedJob
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SeedJob&#34;&gt;SeedJob
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -2800,7 +2800,7 @@ string
 &lt;/p&gt;
 &lt;p&gt;
 &lt;p&gt;SeedJob defines configuration for seed job
-More info: &lt;a href=&#34;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&#34;&gt;https://github.com/jenkinsci/kubernetes-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&lt;/a&gt;&lt;/p&gt;
+More info: &lt;a href=&#34;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&#34;&gt;https://github.com/mikejianzhang/jenkins-operator/blob/master/docs/getting-started.md#configure-seed-jobs-and-pipelines&lt;/a&gt;&lt;/p&gt;
 &lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2881,7 +2881,7 @@ string
 &lt;td&gt;
 &lt;code&gt;credentialType&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.JenkinsCredentialType&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.JenkinsCredentialType&#34;&gt;
 JenkinsCredentialType
 &lt;/a&gt;
 &lt;/em&gt;
@@ -2977,7 +2977,7 @@ bool
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;Service
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Service&#34;&gt;Service
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -3113,7 +3113,7 @@ This field will be ignored if the cloud-provider does not support the feature.&l
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.Slack&#34;&gt;Slack
+&lt;h3 id=&#34;github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.Slack&#34;&gt;Slack
 &lt;/h3&gt;
 &lt;p&gt;
 (&lt;em&gt;Appears on:&lt;/em&gt;
@@ -3134,7 +3134,7 @@ This field will be ignored if the cloud-provider does not support the feature.&l
 &lt;td&gt;
 &lt;code&gt;webHookURLSecretKeySelector&lt;/code&gt;&lt;/br&gt;
 &lt;em&gt;
-&lt;a href=&#34;#github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
+&lt;a href=&#34;#github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2.SecretKeySelector&#34;&gt;
 SecretKeySelector
 &lt;/a&gt;
 &lt;/em&gt;

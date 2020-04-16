@@ -308,11 +308,11 @@ spec:
 ## Update CRD to a new version
 
 A new version of the Custom Resource Definition for the operator needs to be applied:
--[Jenkins CRD v1alpha2](https://github.com/jenkinsci/kubernetes-operator/blob/master/deploy/crds/jenkins_v1alpha2_jenkins_crd.yaml)
+-[Jenkins CRD v1alpha2](https://github.com/mikejianzhang/jenkins-operator/blob/master/deploy/crds/jenkins_v1alpha2_jenkins_crd.yaml)
 
 To use the default CRD file:
 ```
-kubectl -n <namespace> apply -f https://github.com/jenkinsci/kubernetes-operator/blob/master/deploy/crds/jenkins_v1alpha2_jenkins_crd.yaml
+kubectl -n <namespace> apply -f https://github.com/mikejianzhang/jenkins-operator/blob/master/deploy/crds/jenkins_v1alpha2_jenkins_crd.yaml
 ```
 
 ## Update RBAC to a new version

@@ -3,13 +3,13 @@ kind: ClusterServiceVersion
 metadata:
   annotations:
     alm-examples: '[{"apiVersion":"jenkins.io/v1alpha2","kind":"Jenkins","metadata":{"name":"example"},"spec":{"master":{"containers":[{"image":"jenkins/jenkins:lts","imagePullPolicy":"Always","livenessProbe":{"failureThreshold":12,"httpGet":{"path":"/login","port":"http","scheme":"HTTP"},"initialDelaySeconds":80,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":5},"name":"jenkins-master","readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/login","port":"http","scheme":"HTTP"},"initialDelaySeconds":30,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{"limits":{"cpu":"1500m","memory":"3Gi"},"requests":{"cpu":"1","memory":"500Mi"}}}]},"seedJobs":[{"description":"Jenkins
-      Operator repository","id":"jenkins-operator","repositoryBranch":"master","repositoryUrl":"https://github.com/jenkinsci/kubernetes-operator.git","targets":"cicd/jobs/*.jenkins"}]}},{"apiVersion":"jenkins.io/v1alpha2","kind":"Jenkins","metadata":{"name":"jenkins"},"spec":{"master":{"containers":[{"image":"quay.io/openshift/origin-jenkins:latest","name":"jenkins-master","resources":{"limits":{"cpu":"1500m","memory":"3Gi"},"requests":{"cpu":"1","memory":"500Mi"}}}]}}}]'
+      Operator repository","id":"jenkins-operator","repositoryBranch":"master","repositoryUrl":"https://github.com/mikejianzhang/jenkins-operator.git","targets":"cicd/jobs/*.jenkins"}]}},{"apiVersion":"jenkins.io/v1alpha2","kind":"Jenkins","metadata":{"name":"jenkins"},"spec":{"master":{"containers":[{"image":"quay.io/openshift/origin-jenkins:latest","name":"jenkins-master","resources":{"limits":{"cpu":"1500m","memory":"3Gi"},"requests":{"cpu":"1","memory":"500Mi"}}}]}}}]'
     capabilities: Basic Install
     categories: Integration & Delivery
     certified: "false"
     containerImage: virtuslab/jenkins-operator:v0.3.0
     description: Kubernetes native operator which fully manages Jenkins on Kubernetes.
-    repository: https://github.com/jenkinsci/kubernetes-operator
+    repository: https://github.com/mikejianzhang/jenkins-operator
     support: VirtusLab
   name: jenkins-operator.v0.3.0
   namespace: placeholder
@@ -209,7 +209,7 @@ spec:
   - CI/CD
   links:
   - name: GitHub
-    url: https://github.com/jenkinsci/kubernetes-operator
+    url: https://github.com/mikejianzhang/jenkins-operator
   - name: Website
     url: https://jenkinsci.github.io/kubernetes-operator/
   maintainers:

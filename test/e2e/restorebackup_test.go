@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jenkinsci/kubernetes-operator/internal/try"
-	"github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/client"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/base/resources"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/constants"
+	"github.com/mikejianzhang/jenkins-operator/internal/try"
+	"github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/client"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/base/resources"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/constants"
 
 	framework "github.com/operator-framework/operator-sdk/pkg/test"
 	"github.com/stretchr/testify/assert"
@@ -160,7 +160,7 @@ func createJenkinsWithBackupAndRestoreConfigured(t *testing.T, name, namespace s
 					Targets:               "cicd/jobs/*.jenkins",
 					Description:           "Jenkins Operator repository",
 					RepositoryBranch:      "master",
-					RepositoryURL:         "https://github.com/jenkinsci/kubernetes-operator.git",
+					RepositoryURL:         "https://github.com/mikejianzhang/jenkins-operator.git",
 				},
 			},
 			Service: v1alpha2.Service{

@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/jenkinsci/kubernetes-operator/pkg/apis/jenkins/v1alpha2"
-	jenkinsclient "github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/client"
-	"github.com/jenkinsci/kubernetes-operator/pkg/controller/jenkins/configuration/base/resources"
-	"github.com/jenkinsci/kubernetes-operator/pkg/log"
+	"github.com/mikejianzhang/jenkins-operator/pkg/apis/jenkins/v1alpha2"
+	jenkinsclient "github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/client"
+	"github.com/mikejianzhang/jenkins-operator/pkg/controller/jenkins/configuration/base/resources"
+	"github.com/mikejianzhang/jenkins-operator/pkg/log"
 
 	"github.com/go-logr/logr"
 	"github.com/pkg/errors"
