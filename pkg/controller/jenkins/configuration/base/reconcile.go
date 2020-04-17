@@ -384,7 +384,7 @@ func (r *ReconcileJenkinsBaseConfiguration) createService(meta metav1.ObjectMeta
 func (r *ReconcileJenkinsBaseConfiguration) getJenkinsMasterPod() (*corev1.Pod, error) {
 	jenkinsMasterPodName := resources.GetJenkinsMasterPodName(*r.Configuration.Jenkins)
 	currentJenkinsMasterPod := &corev1.Pod{}
-	err := r.Client.Get(context.TODO(), types.NamespacedName{Name: jenkinsMasterPodName, Namespace: r.Configuration.Jenkins.Namespace}, currentJenkinsMasterPod)
+	err := r.Client.Get(context.TODO(), types.NamespacedName{Name: jenkinsMasterPodName, Namespace: r.Configuration.Jenkins.ObjectMeta.Namespace}, currentJenkinsMasterPod)
 	if err != nil {
 		return nil, err // don't wrap error
 	}
@@ -433,7 +433,7 @@ func (r *ReconcileJenkinsBaseConfiguration) ensureJenkinsMasterPod(meta metav1.O
 			PendingBackup:       r.Configuration.Jenkins.Status.LastBackup,
 			UserAndPasswordHash: userAndPasswordHash,
 		}
-		return reconcile.Result{Requeue: true}, r.Client.Update(context.TODO(), r.Configuration.Jenkins)
+		return reconcile.Result{Requeue: true}, r.Client.Status().Update(context.TODO(), r.Configuration.Jenkins)
 	} else if err != nil && !apierrors.IsNotFound(err) {
 		return reconcile.Result{}, stackerr.WithStack(err)
 	}
