@@ -97,6 +97,7 @@ spec:
                   - name
                   type: object
               required:
+              - configurations
               - secret
               type: object
             groovyScripts:
@@ -122,6 +123,7 @@ spec:
                   - name
                   type: object
               required:
+              - configurations
               - secret
               type: object
             master:
